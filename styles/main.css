@@ -1,0 +1,28 @@
+h1, h2, h3 {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+h2, h3 {
+  padding-top: 1em;
+}
+
+p {
+  font-family: Georgia, Times, serif;
+  font-size: 16px;
+}
+
+header {
+  line-height: .6em;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.header-h3 {
+  padding-top: 0;
+}
+
+.yourName {
+  text-align: center;
+  padding: 0;
+}

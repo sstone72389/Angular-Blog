@@ -4,6 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Blog/Tuitorial</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <!-- Need to check prettify docs for code snippets -->
@@ -11,9 +14,15 @@
     <script src="js/main.js"></script>
   </head>
   <body>
-    <div>
+
+    <header>
+    <h1>In Depth Angular</h1>
+    <h3 class="header-h3">A blog by Spencer Stone</h2>
+    </header>
+
+    <div class="yourName">
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello, {{ yourName }}. Welcome!</h1>
+      <h2 class="yourName">Hello, {{ yourName }}. Welcome!</h2>
     </div>
 
     <p>
