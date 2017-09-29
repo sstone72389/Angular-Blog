@@ -21,24 +21,24 @@
     </h2>
 
     <ul>
-      <li>ng-app</li>
-      <li>ng-model=“yourName”</li>
+      <li><code>ng-app</code></li>
+      <li><code>ng-model=“yourName”</code></li>
       <!-- ng-non-bindable directive tells AngularJS not to compile or bind the contents of the current DOM element -->
-      <li><span ng-non-bindable="">{{ yourName }}</span></li>
+      <li><code><span ng-non-bindable="">{{ yourName }}</code></span></li>
     </ul>
 
     <p>Wait...What is this stuff? Let's dig a little deeper, here.</p>
 
     <p>
-      <strong>First</strong>, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+      <strong>First</strong>, the <code>ng-app</code> attribute is added on the <code>&lt;html&gt;</code> tag. This tag allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a <code>body</code> tag as well.
     </p>
 
     <p>
-      <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading ng-model="yourName" to the input.
+      <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading <code>ng-model="yourName"</code> to the input.
     </p>
 
     <p>
-      <strong>Lastly</strong>, we displayed the data yourName in the directive template called <span ng-non-bindable="">{{ yourName }}</span>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template pattern.
+      <strong>Lastly</strong>, we displayed the data yourName in the directive template called <code><span ng-non-bindable="">{{ yourName }}</span></code>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template pattern.
     </p>
 
     <p>
@@ -54,18 +54,20 @@
     </p>
 
     <p>
-      In our linked Javascript file, we will define our module as such: var app = angular.module('myApp', [])
+      In our linked Javascript file, we will define our module as such: <code>var app = angular.module('myApp', [])</code>
     </p>
 
     <p>
-      The first arguement is the name of our module. The second, empty array ([]) we will adress, shortly.
+      The first arguement is the name of our module. The second, empty array will be adressed, shortly.
     </p>
 
     <p>
-      Next we must instantiate our myApp module and let Angular know where in the DOM tree to look for our app. Remember that ng-app directive we added earlier to the &lt;html&gt; tag? This is where we'll do this. It can be done by simply adding the name of our new module, like so: &lt;html ng-app="myApp"&gt; tag.
+      Next we must instantiate our myApp module and let Angular know where in the DOM tree to look for our app. Remember that <code>ng-app</code> directive we added earlier to the <code>&lt;html&gt;</code> tag? This is where we'll do this. It can be done by simply adding the name of our new module, like so: <code>&lt;html ng-app="myApp"&gt;</code>.
     </p>
 
-
+    <p>
+      Wherever <code>ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code>&lt;html&gt;</code> or <code>&lt;body&gt;</code> tags, since we want the app to take over the entire page.
+    </p>
 
   </body>
 </html>
