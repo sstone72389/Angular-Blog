@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app>
+<!-- Use ng-app directive to auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page - e.g. on the <body> or <html> tags. -->
+  <head>
+    <meta charset="utf-8">
+    <title>Spencer's Angular Blog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <h1>Hello, {{ yourName }}! Welcome!</h1>
+    </div>
+    <p>
+      Wow! Bi-directional data binding (Which essentially means changing data on the back end changes your view automatically). This is a very simple example of Angualar at work. Let's take a deeper look into whats happening...
+    </p>
+
+    <h2>
+      Lets see the code! Here are the elements we used in our app to make this happen:
+    </h2>
+
+    <ul>
+      <li>ng-app</li>
+      <li>ng-model=“yourName”</li>
+      <!-- ng-non-bindable directive tells AngularJS not to compile or bind the contents of the current DOM element -->
+      <li><span ng-non-bindable="">{{ yourName }}</span></li>
+    </ul>
+
+    <p>Wait...What is this stuff? Let's dig a little deeper, here.</p>
+
+    <p>
+      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+    </p>
+
+    <p>
+      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+    </p>
+
+    <p>
+      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+    </p>
+    
+  </body>
+</html>
