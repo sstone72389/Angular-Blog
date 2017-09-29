@@ -9,7 +9,7 @@
   <body>
     <div>
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello, {{ yourName }}! Welcome!</h1>
+      <h1>Hello, {{ yourName }}. Welcome!</h1>
     </div>
     <p>
       Wow! Bi-directional data binding (Which essentially means changing data on the back end changes your view automatically). This is a very simple example of Angualar at work. Let's take a deeper look into whats happening...
@@ -29,16 +29,20 @@
     <p>Wait...What is this stuff? Let's dig a little deeper, here.</p>
 
     <p>
-      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+      <strong>First</strong>, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
     </p>
 
     <p>
-      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+      <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading ng-model="yourName" to the input.
     </p>
 
     <p>
-      First, the ng-app attribute is added on the &lt;html&gt; tag. This tage allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a body tag as well.
+      <strong>Lastly</strong>, we displayed the data yourName in the directive template called <span ng-non-bindable="">{{ yourName }}</span>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template pattern.
     </p>
-    
+
+    <p>
+      This is about as simple as AngularJS gets. We have yet to even touch Javascript yet, but dont worry, we'll get to that as more customized behavior becomes needed.  
+    </p>
+
   </body>
 </html>
