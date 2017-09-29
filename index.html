@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Spencer's Angular Blog</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
     <div>
@@ -41,8 +42,30 @@
     </p>
 
     <p>
-      This is about as simple as AngularJS gets. We have yet to even touch Javascript yet, but dont worry, we'll get to that as more customized behavior becomes needed.  
+      This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes necessary.
     </p>
+
+    <h2>
+      Javascript! Javascript!
+    </h2>
+
+    <p>
+      Okay. You asked for it. Lets get started with the javascript. First we created a new JS file and linked it in our head tag. Next we need to define an angular.module. An Angular module is a collection of functions that are run when the application is started.
+    </p>
+
+    <p>
+      In our linked Javascript file, we will define our module as such: var app = angular.module('myApp', [])
+    </p>
+
+    <p>
+      The first arguement is the name of our module. The second, empty array ([]) we will adress, shortly.
+    </p>
+
+    <p>
+      Next we must instantiate our myApp module and let Angular know where in the DOM tree to look for our app. Remember that ng-app directive we added earlier to the &lt;html&gt; tag? This is where we'll do this. It can be done by simply adding the name of our new module, like so: &lt;html ng-app="myApp"&gt; tag.
+    </p>
+
+
 
   </body>
 </html>
