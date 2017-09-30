@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
 
-app.run(function($rootScope) {
-  $rootScope.name = "Angular Student";
-});
+// app.run(function($rootScope) {
+//   $rootScope.name = "Angular Student";
+// });

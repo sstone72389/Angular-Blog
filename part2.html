@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<!-- Use ng-app directive to auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page - e.g. on the <body> or <html> tags. -->
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Blog/Tuitorial</title>
+
+    <link rel="shortcut icon" href="./img/angularLogo.png"/>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  </head>
+  <body>
+
+    <header>
+    <img src="./img/angularLogo.png" alt="AngularJS Logo">
+    <h1>In Depth Angular</h1>
+    <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h3>
+    </header>
+
+    <div class="intro">
+    <p>
+      Welcome to Part 2 of In Depth Angular by Spencer Stone. In this section we will check out <code class="code">$scope</code> and what that means in an AngularJS application. Let's get&nbsp;started!
+    </p>
+    </div>
+
+    <h2>Scopes</h2>
+
+    <p>
+      A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this, allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
+    </p>
+
+    <p>
+      All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think of <code class="code">$rootScope</code> as global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local&nbsp;variables.
+    </p>
+
+  </body>
+</html>

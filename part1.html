@@ -5,13 +5,17 @@
     <meta charset="utf-8">
     <title>Angular Blog/Tuitorial</title>
 
+    <link rel="shortcut icon" href="./img/angularLogo.png"/>
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <!-- Need to check prettify docs for code snippets -->
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script src="js/main.js"></script>
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
   </head>
   <body>
@@ -19,7 +23,7 @@
     <header>
     <img src="./img/angularLogo.png" alt="AngularJS Logo">
     <h1>In Depth Angular</h1>
-    <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h2>
+    <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h3>
     </header>
 
     <div class="yourName">
@@ -45,7 +49,7 @@
       <li><code class="code">ng-app</code></li>
       <li><code class="code">ng-model=“yourName”</code></li>
       <!-- ng-non-bindable directive tells AngularJS not to compile or bind the contents of the current DOM element -->
-      <li><code class="code"><span ng-non-bindable="">{{ yourName }}</code></span></li>
+      <li><code class="code"><span ng-non-bindable="">{{ yourName }}</span></code></li>
     </ul>
 
     <p>Wait...What is this&nbsp;stuff?</p>
@@ -90,16 +94,7 @@
       Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app to take over the entire&nbsp;page.
     </p>
 
-    <h2>Scopes</h2>
+    <h4 class="continue"><a href="./part2.html">Continue</a> to Part 2 of this&nbsp;tuitorial</h4>
 
-    <p>
-      A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this, allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
-    </p>
-
-    <p>
-      All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think of <code class="code">$rootScope</code> as global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local&nbsp;variables.
-    </p>
-
-    <p>{{ name }}</p>
   </body>
 </html>
