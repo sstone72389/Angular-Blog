@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
 <!-- Use ng-app directive to auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page - e.g. on the <body> or <html> tags. -->
   <head>
     <meta charset="utf-8">
@@ -12,6 +12,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/main.js"></script>
     <!-- jQuery library -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- Latest compiled JavaScript -->
@@ -94,7 +95,21 @@
       Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app to take over the entire&nbsp;page.
     </p>
 
-    <h4 class="continue"><a href="./part2.html">Continue</a> to Part 2 of this&nbsp;tuitorial</h4>
+    <h2>Scopes</h2>
+
+    <p>
+      A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this, allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
+    </p>
+
+    <p>
+      All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think of <code class="code">$rootScope</code> as global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local&nbsp;variables.
+    </p>
+
+    <p>
+    {{ name }}
+    </p>
+
+    <!-- <h4 class="continue"><a href="./part2.html">Continue</a> to Part 2 of this&nbsp;tuitorial</h4> -->
 
   </body>
 </html>
