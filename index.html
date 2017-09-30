@@ -80,7 +80,7 @@
     </p>
 
     <p>
-      In our linked Javascript file, we will define our module as such: <pre><code class="pre">var app = angular.module('myApp', [])</code></pre>
+      In our linked Javascript file, we will define our module as such: <pre class="pre"><code>var app = angular.module('myApp', [])</code></pre>
     </p>
 
     <p>
@@ -106,10 +106,26 @@
     </p>
 
     <p>
-    {{ name }}
+    Take a look at this function:
     </p>
 
-    <!-- <h4 class="continue"><a href="./part2.html">Continue</a> to Part 2 of this&nbsp;tuitorial</h4> -->
+    <pre class="pre"><code>app.run(function($rootScope) {
+  $rootScope.name = "Angular Student"
+});</code></pre>
+
+    <p>
+     Once AngularJS is fully loaded, it calls the run method. This method takes one function as an argument and will be executed when the page is ready to go. This is very similar to jQuery's <code class="code">$(document).ready()</code> function. Anything we put in the <code class="code">app.run</code> function will run prior to the rest of the&nbsp;app.
+    </p>
+
+    <p>
+      So how do we use this in our HTML?
+
+      We will need to use the expression/template: <span ng-non-bindable="">{{ }}</span>, as such: <code class="code"><span ng-non-bindable="">{{ name }}</span></code>
+    </p>
+
+    <p>
+      Now anywhere we have <code class="code"><span ng-non-bindable="">{{ name }}</span></code> in our app, it will display "Angular Student" as directed to do so by our function.
+    </p>
 
   </body>
 </html>
