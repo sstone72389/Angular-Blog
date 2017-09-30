@@ -19,26 +19,26 @@
     <header>
     <img src="./img/angularLogo.png" alt="AngularJS Logo">
     <h1>In Depth Angular</h1>
-    <h3 class="header-h3">A blog by Spencer Stone</h2>
+    <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h2>
     </header>
 
     <div class="yourName">
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h2 class="yourName">Hello, {{ yourName }}. Welcome!</h2>
+      <h2 class="yourName">Hello, {{ yourName }}.&nbsp;Welcome!</h2>
     </div>
 
     <div class="intro">
     <p>
-      Welcome to In Depth Angular by Spencer Stone. In this tuitorial we will examine the inner workings of a very popular framework developed by Google, Angular JS. Angular is a very popular framework, utilized by many organizations. Enter your name in the above input to see angular at work.
+      Welcome to In Depth Angular by Spencer Stone. In this tuitorial we will examine the inner workings of a very popular framework developed by Google, AngularJS. Enter your name in the above input to see angular at&nbsp;work.
     </p>
 
     <p>
-      So what is happening above, then? Bi-directional data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats happening. Ready..Set..Code!
+      So what is happening above, then? Bi-directional data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats going on. Ready..Set..Code!
     </p>
     </div>
 
     <h2>
-      Lets see the code! Here are the elements we used in our app to make this happen:
+      Lets see the code! Here are the elements we used in our app to make this&nbsp;happen:
     </h2>
 
     <ul>
@@ -48,22 +48,22 @@
       <li><code class="code"><span ng-non-bindable="">{{ yourName }}</code></span></li>
     </ul>
 
-    <p>Wait...What is this stuff? Let's dig a little deeper, here.</p>
+    <p>Wait...What is this&nbsp;stuff?</p>
 
     <p>
-      <strong>First</strong>, the <code class="code">ng-app</code> attribute is added on the <code class="code">&lt;html&gt;</code> tag. This tag allows Angular to start. Without this, the CDN used here is useless. It is ually added to root elements and could easily be applied to a <code class="code">body</code> tag as well.
+      <strong>First</strong>, the <code class="code">ng-app</code> attribute is added on the <code class="code">&lt;html&gt;</code> tag. This tag allows Angular to start. Without this, the CDN used here is useless. It is usually added to root elements and could easily be applied to a <code class="code">body</code> tag as&nbsp;well.
     </p>
 
     <p>
-      <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading <code class="code">ng-model="yourName"</code> to the input.
+      <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading <code class="code">ng-model="yourName"</code> to the&nbsp;input.
     </p>
 
     <p>
-      <strong>Lastly</strong>, we displayed the data yourName in the directive template called <code class="code"><span ng-non-bindable="">{{ yourName }}</span></code>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template pattern.
+      <strong>Lastly</strong>, we displayed the data yourName in the directive template called <code class="code"><span ng-non-bindable="">{{ yourName }}</span></code>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template&nbsp;pattern.
     </p>
 
     <p>
-      This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes necessary.
+      This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes&nbsp;necessary.
     </p>
 
     <h2>
@@ -71,15 +71,15 @@
     </h2>
 
     <p>
-      Okay. You asked for it. Lets get started with the javascript. First we created a new JS file and linked it in our head tag. Next we need to define an angular.module. An Angular module is a collection of functions that are run when the application is started.
+      Okay. You asked for it. Lets get started with the javascript. First we created a new JS file and linked it in our head tag. Next we need to define an angular.module. An Angular module is a collection of functions that are run when the application is&nbsp;started.
     </p>
 
     <p>
-      In our linked Javascript file, we will define our module as such: <code class="code">var app = angular.module('myApp', [])</code>
+      In our linked Javascript file, we will define our module as such: <pre><code class="pre">var app = angular.module('myApp', [])</code></pre>
     </p>
 
     <p>
-      The first arguement is the name of our module. The second, empty array will be adressed, shortly.
+      The first arguement is the name of our module. The second, empty array will be adressed,&nbsp;shortly.
     </p>
 
     <p>
@@ -87,17 +87,17 @@
     </p>
 
     <p>
-      Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app to take over the entire page.
+      Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app to take over the entire&nbsp;page.
     </p>
 
     <h2>Scopes</h2>
 
     <p>
-      A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this, allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the view.
+      A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this, allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
     </p>
 
     <p>
-      All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think <code class="code">$rootScope</code> as global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local variables.
+      All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think of <code class="code">$rootScope</code> as global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local&nbsp;variables.
     </p>
 
     <p>{{ name }}</p>
