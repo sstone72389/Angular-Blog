@@ -9,3 +9,16 @@ app.controller('myFirstController', function($scope){
     name: "Bojack Horseman"
   };
 });
+
+app.controller('ParentController', function($scope) {
+  $scope.student = {saidHello: false};
+});
+
+app.controller('ChildController', function($scope) {
+  $scope.sayHello = function() {
+    $scope.student.saidHello = true;
+  }
+  $scope.reset = function() {
+    $scope.student.saidHello = false;
+  }
+});

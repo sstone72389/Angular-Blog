@@ -134,16 +134,16 @@
   </p>
 
   <p>
-    Now anywhere we have <code class="code"><span ng-non-bindable="">{{ name }}</span></code> in our app, it will display "{{ name }}" as directed to do so by our function.
+    Now anywhere we have <code class="code"><span ng-non-bindable="">{{ name }}</span></code> in our app, it will display "{{ name }}" as directed to do so by our&nbsp;function.
   </p>
 
   <p>
     Whatever we attach to this <code class="code">$scope</code> object to will become available to the view. If a controller makes any changes, it will also become available to the view. Next, we will attach a controller to a DOM element, which will create
-    a <code class="code">$scope</code> allowing us to interact with it.
+    a <code class="code">$scope</code> allowing us to interact with&nbsp;it.
   </p>
 
   <p>
-    Let's dive right in. We will attach a controller to an element in the DOM using the <code class="code">ng-controller</code> directive. An example can be seen below:
+    Let's dive right in. We will attach a controller to an element in the DOM using the <code class="code">ng-controller</code> directive. An example can be seen&nbsp;below:
   </p>
 
   <pre class="pre"><code>&lt;div ng-controller=&quot;myFirstController&quot;&gt;
@@ -152,17 +152,76 @@
 
   <p>
     Much like our <code class="code">ng-app</code> directive attched to our <code class="code">&lt;html&gt;</code> tag, the <code class="code">ng-controller</code> directive is attached to our element of choice (in this case, a <code class="code">&lt;div&gt;</code>).
-    The name we've assigned it here will once again be associated with the applicable Javascript object.
+    The name we've assigned it here will once again be associated with the applicable Javascript&nbsp;object.
   </p>
 
   <p>
-    The <code class="code">ng-controller</code> directive creates a new <code class="code">$scope</code> object for our selected DOM element and nests it in the containing <code class="code">$scope</code>. For this instance, the parent <code class="code">$scope</code> of our div is the <code class="code">$rootScope</code> object. Basically, the rules of protypical inheritance are applied here. A visualization of this "family tree" can be seen below.
+    The <code class="code">ng-controller</code> directive creates a new <code class="code">$scope</code> object for our selected DOM element and nests it in the containing <code class="code">$scope</code>. For this instance, the parent <code class="code">$scope</code>    of our div is the <code class="code">$rootScope</code> object. Basically, the rules of protypical inheritance are applied here. If AngularJS cannot find a property on a specific scope, it will climb up to the containing parent scope (all the way up
+    to our "global" rootScope) to find it. A visualization of this "family tree" can be seen&nbsp;below.
   </p>
 
   <img src="./img/rootscopeScope.png" alt="$scope Family Tree">
 
+  <p>
+    There is one exception to this: isolate scope. This directive will <em>not</em> inherit from it's parents.
+  </p>
+
+  <p>
+    So what about the Javascript? Okay, well our controller sets up a <code class="code">$scope</code> we can access within the desired DOM element. We will need to create a Student object on the <code class="code">$scope</code> of this controller in
+    our js&nbsp;file.
+  </p>
+
+  <pre class="pre"><code>app.controller('myFirstController', function($scope){
+  $scope.student = {
+    name: "Bojack Horseman"
+  };
+});</code></pre>
+
   <div ng-controller="myFirstController">
-    <p>{{ student.name }}</p>
+    <p>And here it is: <strong>{{ student.name }}</strong></p>
+  </div>
+
+  <p>
+    Yes, I did name my student Bojack. Don't hate. So now, we can access this <code class="code">student</code> object in any child element of the div where the <code class="code">ng-controller</code> directive matches ours. This is <em>because</em> it
+    is on the&nbsp;<code class="code">$scope</code>.
+  </p>
+
+  <p>
+    Lets take a deeper look at how prototypical inheritance works within an AngularJS app. Say we have a <code class="code">ParentController</code> containing the student object and a <code class="code">ChildController</code> that wants to reference such
+    object.
+  </p>
+
+  <pre class="pre"><code>app.controller('ParentController', function($scope) {
+    $scope.student = {saidHello: false};
+  });
+
+app.controller('ChildController', function($scope) {
+  $scope.sayHello = function() {
+    $scope.student.saidHello = true;
+  }
+});</code></pre>
+
+  <p>
+    Let's bind the ChildController under the ParentController in our view. Doing so will allow it to reference the property contained on the parent scope.
+  </p>
+
+  <pre class="pre"><code>&lt;div ng-controller=&quot;ParentController&quot;&gt;
+  &lt;div ng-controller=&quot;ChildController&quot;&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;student.name&quot; placeholder=&quot;student name&quot;&gt;&lt;/input&gt;
+    &lt;a class=&quot;button&quot; href=&quot;&quot; ng-click=&quot;sayHello()&quot;&gt;Say hello&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;p&gt;<span ng-non-bindable="">{{ student }}</span>&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+  <h3>Here it is in action:</h3>
+
+  <div ng-controller="ParentController">
+    <div ng-controller="ChildController">
+      <input type="text" ng-model="student.name" placeholder="student name"></input>
+      <a class="button" href="" ng-click="sayHello()">Say hello</a>&nbsp;&nbsp;
+      <a class="button" href="" ng-click="reset()">Reset</a>
+    </div>
+    <p>{{ student }}</p>
   </div>
 
 </body>
