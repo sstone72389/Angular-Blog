@@ -76,3 +76,11 @@ code {
   font-size: 90%;
   line-height: 2em;
 }
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

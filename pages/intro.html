@@ -1,0 +1,46 @@
+<div class="yourName">
+  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+  <h2 class="yourName">Hello, {{ yourName }}.&nbsp;Welcome!</h2>
+</div>
+
+<div class="intro">
+  <p>
+    Welcome to In Depth Angular by Spencer Stone. In this tuitorial we will examine the inner workings of a very popular framework developed by Google, AngularJS. Enter your name in the above input to see angular at&nbsp;work.
+  </p>
+
+  <p>
+    So what is happening above, then? Data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats going on. Ready..Set..Code!
+  </p>
+</div>
+
+<h2>
+    Lets see the code! Here are the elements we used in our app to make this&nbsp;happen:
+</h2>
+
+<ul>
+  <li><code class="code">ng-app</code></li>
+  <li><code class="code">ng-model=“yourName”</code></li>
+  <!-- ng-non-bindable directive tells AngularJS not to compile or bind the contents of the current DOM element -->
+  <li><code class="code"><span ng-non-bindable="">{{ yourName }}</span></code></li>
+</ul>
+
+<p>Wait...What is this&nbsp;stuff?</p>
+
+<p>
+  <strong>First</strong>, the <code class="code">ng-app</code> attribute is added on the <code class="code">&lt;html&gt;</code> tag. This tag allows Angular to start. Without this, the CDN used here is useless. It is usually added to root elements and
+  could easily be applied to a <code class="code">body</code> tag as&nbsp;well.
+</p>
+
+<p>
+  <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading <code class="code">ng-model="yourName"</code> to the&nbsp;input.
+</p>
+
+<p>
+  <strong>Lastly</strong>, we displayed the data yourName in the directive template called <code class="code"><span ng-non-bindable="">{{ yourName }}</span></code>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template&nbsp;pattern.
+</p>
+
+<p>
+  This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes&nbsp;necessary.
+</p>
+
+<a class="right" href="#javascript">Continue</a>

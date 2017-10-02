@@ -13,6 +13,7 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
   <script src="js/main.js"></script>
   <!-- jQuery library -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
@@ -29,29 +30,32 @@
     <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h3>
   </header>
 
-  <div class="yourName">
+  <!-- <div class="yourName">
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
     <h2 class="yourName">Hello, {{ yourName }}.&nbsp;Welcome!</h2>
-  </div>
+  </div> -->
 
-  <div class="intro">
+  <!-- <div class="intro">
     <p>
       Welcome to In Depth Angular by Spencer Stone. In this tuitorial we will examine the inner workings of a very popular framework developed by Google, AngularJS. Enter your name in the above input to see angular at&nbsp;work.
     </p>
 
     <p>
-      So what is happening above, then? Bi-directional data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats going on. Ready..Set..Code!
+      So what is happening above, then? Data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats going on. Ready..Set..Code!
     </p>
   </div>
 
-  <h2>
+  <br> -->
+
+  <div ng-view></div>
+
+  <!-- <h2>
       Lets see the code! Here are the elements we used in our app to make this&nbsp;happen:
     </h2>
 
   <ul>
     <li><code class="code">ng-app</code></li>
     <li><code class="code">ng-model=“yourName”</code></li>
-    <!-- ng-non-bindable directive tells AngularJS not to compile or bind the contents of the current DOM element -->
     <li><code class="code"><span ng-non-bindable="">{{ yourName }}</span></code></li>
   </ul>
 
@@ -72,9 +76,9 @@
 
   <p>
     This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes&nbsp;necessary.
-  </p>
+  </p> -->
 
-  <h2>
+  <!-- <h2>
       Javascript! Javascript!
     </h2>
 
@@ -98,9 +102,9 @@
   <p>
     Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app
     to take over the entire&nbsp;page.
-  </p>
+  </p> -->
 
-  <h2>Scopes</h2>
+  <!-- <h2>Scopes</h2>
 
   <p>
     A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this,
@@ -222,7 +226,7 @@ app.controller('ChildController', function($scope) {
       <a class="button" href="" ng-click="reset()">Reset</a>
     </div>
     <p>{{ student }}</p>
-  </div>
+  </div> -->
 
 </body>
 

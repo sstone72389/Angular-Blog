@@ -1,0 +1,29 @@
+<h2>
+    Javascript! Javascript!
+  </h2>
+
+<p>
+  Okay. You asked for it. Lets get started with the javascript. First we created a new JS file and linked it in our head tag. Next we need to define an angular.module. An Angular module is a collection of functions that are run when the application is&nbsp;started.
+</p>
+
+<p>
+  In our linked Javascript file, we will define our module as such: <pre class="pre"><code>var app = angular.module('myApp', [])</code></pre>
+</p>
+
+<p>
+  The first arguement is the name of our module. The second, empty array will be adressed,&nbsp;shortly.
+</p>
+
+<p>
+  Next we must instantiate our myApp module and let Angular know where in the DOM tree to look for our app. Remember that <code class="code">ng-app</code> directive we added earlier to the <code class="code">&lt;html&gt;</code> tag? This is where we'll
+  do this. It can be done by simply adding the name of our new module, like so: <code class="code">&lt;html ng-app="myApp"&gt;</code>.
+</p>
+
+<p>
+  Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app
+  to take over the entire&nbsp;page.
+</p>
+
+<a class="left" href="#intro">Back</a>
+
+<a class="right" href="#scopes">Continue</a>
