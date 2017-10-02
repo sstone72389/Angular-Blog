@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="styles/reset.css">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <!-- Latest compiled and minified CSS -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
@@ -21,209 +21,17 @@
 
 <body ng-app="animateApp">
 
+  <div class="container eighty">
+
   <header>
     <img src="./img/angularLogo.png" alt="AngularJS Logo">
     <h1>In Depth Angular</h1>
     <h3 class="header-h3">A blog by Spencer&nbsp;Stone</h3>
   </header>
 
-  <!-- <div class="yourName">
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <h2 class="yourName">Hello, {{ yourName }}.&nbsp;Welcome!</h2>
-  </div> -->
-
-  <!-- <div class="intro">
-    <p>
-      Welcome to In Depth Angular by Spencer Stone. In this tuitorial we will examine the inner workings of a very popular framework developed by Google, AngularJS. Enter your name in the above input to see angular at&nbsp;work.
-    </p>
-
-    <p>
-      So what is happening above, then? Data binding. This essentially means changing data on the back end changes your view automatically. This is a very simple example of Angular at work. Let's take a deeper look into whats going on. Ready..Set..Code!
-    </p>
-  </div>
-
-  <br> -->
-
   <div class="page {{ pageClass }}" ng-view></div>
 
-  <!-- <h2>
-      Lets see the code! Here are the elements we used in our app to make this&nbsp;happen:
-    </h2>
-
-  <ul>
-    <li><code class="code">ng-app</code></li>
-    <li><code class="code">ng-model=“yourName”</code></li>
-    <li><code class="code"><span ng-non-bindable="">{{ yourName }}</span></code></li>
-  </ul>
-
-  <p>Wait...What is this&nbsp;stuff?</p>
-
-  <p>
-    <strong>First</strong>, the <code class="code">ng-app</code> attribute is added on the <code class="code">&lt;html&gt;</code> tag. This tag allows Angular to start. Without this, the CDN used here is useless. It is usually added to root elements and
-    could easily be applied to a <code class="code">body</code> tag as&nbsp;well.
-  </p>
-
-  <p>
-    <strong>Second</strong>, we to set up bi-directional data binding on the yourName model simply by ading <code class="code">ng-model="yourName"</code> to the&nbsp;input.
-  </p>
-
-  <p>
-    <strong>Lastly</strong>, we displayed the data yourName in the directive template called <code class="code"><span ng-non-bindable="">{{ yourName }}</span></code>. If you are fimailiar with Handlebars or Mustache, you may be recgognize this template&nbsp;pattern.
-  </p>
-
-  <p>
-    This is about as simple as AngularJS gets. We have yet to even touch Javascript yet; but dont worry, we'll get to that as more customized behavior becomes&nbsp;necessary.
-  </p> -->
-
-  <!-- <h2>
-      Javascript! Javascript!
-    </h2>
-
-  <p>
-    Okay. You asked for it. Lets get started with the javascript. First we created a new JS file and linked it in our head tag. Next we need to define an angular.module. An Angular module is a collection of functions that are run when the application is&nbsp;started.
-  </p>
-
-  <p>
-    In our linked Javascript file, we will define our module as such: <pre class="pre"><code>var app = angular.module('myApp', [])</code></pre>
-  </p>
-
-  <p>
-    The first arguement is the name of our module. The second, empty array will be adressed,&nbsp;shortly.
-  </p>
-
-  <p>
-    Next we must instantiate our myApp module and let Angular know where in the DOM tree to look for our app. Remember that <code class="code">ng-app</code> directive we added earlier to the <code class="code">&lt;html&gt;</code> tag? This is where we'll
-    do this. It can be done by simply adding the name of our new module, like so: <code class="code">&lt;html ng-app="myApp"&gt;</code>.
-  </p>
-
-  <p>
-    Wherever <code class="code">ng-app</code> is located in our HTML is where Angular will start. For our case, we want this to be on either the <code class="code">&lt;html&gt;</code> or <code class="code">&lt;body&gt;</code> tags, since we want the app
-    to take over the entire&nbsp;page.
-  </p> -->
-
-  <!-- <h2>Scopes</h2>
-
-  <p>
-    A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this,
-    allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
-  </p>
-
-  <p>
-    All AngularJS apps must have a <code class="code">$rootScope</code>. This is the top-most scope that is created on the DOM element containing our <code class="code">ng-app</code> directive. You can think of <code class="code">$rootScope</code> as
-    global variable since it is accessible everwhere in our application and <code class="code">$scope</code> as local&nbsp;variables.
-  </p>
-
-  <p>
-    Take a look at this function:
-  </p>
-
-  <pre class="pre"><code>app.run(function($rootScope) {
-  $rootScope.name = "Angular Student"
-});</code></pre>
-
-  <p>
-    Once AngularJS is fully loaded, it calls the run method. This method takes one function as an argument and will be executed when the page is ready to go. This is very similar to jQuery's <code class="code">$(document).ready()</code> function. Anything
-    we put in the <code class="code">app.run</code> function will run prior to the rest of the&nbsp;app.
-  </p>
-
-  <p>
-    So how do we use this in our HTML? We will need to use the expression/template: <span ng-non-bindable="">{{ }}</span>, as such: <code class="code"><span ng-non-bindable="">{{ name }}</span></code>
-  </p>
-
-  <p>
-    Here it is: <strong>{{ name }}</strong>
-  </p>
-
-  <p>
-    Now anywhere we have <code class="code"><span ng-non-bindable="">{{ name }}</span></code> in our app, it will display "{{ name }}" as directed to do so by our&nbsp;function.
-  </p>
-
-  <p>
-    Whatever we attach to this <code class="code">$scope</code> object to will become available to the view. If a controller makes any changes, it will also become available to the view. Next, we will attach a controller to a DOM element, which will create
-    a <code class="code">$scope</code> allowing us to interact with&nbsp;it.
-  </p>
-
-  <p>
-    Let's dive right in. We will attach a controller to an element in the DOM using the <code class="code">ng-controller</code> directive. An example can be seen&nbsp;below:
-  </p>
-
-  <pre class="pre"><code>&lt;div ng-controller=&quot;myFirstController&quot;&gt;
-  <span ng-non-bindable="">{{ student.name }}</span>
-&lt;/div&gt;</code></pre>
-
-  <p>
-    Much like our <code class="code">ng-app</code> directive attched to our <code class="code">&lt;html&gt;</code> tag, the <code class="code">ng-controller</code> directive is attached to our element of choice (in this case, a <code class="code">&lt;div&gt;</code>).
-    The name we've assigned it here will once again be associated with the applicable Javascript&nbsp;object.
-  </p>
-
-  <p>
-    The <code class="code">ng-controller</code> directive creates a new <code class="code">$scope</code> object for our selected DOM element and nests it in the containing <code class="code">$scope</code>. For this instance, the parent <code class="code">$scope</code>    of our div is the <code class="code">$rootScope</code> object. Basically, the rules of protypical inheritance are applied here. If AngularJS cannot find a property on a specific scope, it will climb up to the containing parent scope (all the way up
-    to our "global" rootScope) to find it. A visualization of this "family tree" can be seen&nbsp;below.
-  </p>
-
-  <img src="./img/rootscopeScope.png" alt="$scope Family Tree">
-
-  <p>
-    There is one exception to this: isolate scope. This directive will <em>not</em> inherit from it's parents.
-  </p>
-
-  <p>
-    So what about the Javascript? Okay, well our controller sets up a <code class="code">$scope</code> we can access within the desired DOM element. We will need to create a Student object on the <code class="code">$scope</code> of this controller in
-    our js&nbsp;file.
-  </p>
-
-  <pre class="pre"><code>app.controller('myFirstController', function($scope){
-  $scope.student = {
-    name: "Bojack Horseman"
-  };
-});</code></pre>
-
-  <div ng-controller="myFirstController">
-    <p>And here it is: <strong>{{ student.name }}</strong></p>
   </div>
-
-  <p>
-    Yes, I did name my student Bojack. Don't hate. So now, we can access this <code class="code">student</code> object in any child element of the div where the <code class="code">ng-controller</code> directive matches ours. This is <em>because</em> it
-    is on the&nbsp;<code class="code">$scope</code>.
-  </p>
-
-  <p>
-    Lets take a deeper look at how prototypical inheritance works within an AngularJS app. Say we have a <code class="code">ParentController</code> containing the student object and a <code class="code">ChildController</code> that wants to reference such
-    object.
-  </p>
-
-  <pre class="pre"><code>app.controller('ParentController', function($scope) {
-    $scope.student = {saidHello: false};
-  });
-
-app.controller('ChildController', function($scope) {
-  $scope.sayHello = function() {
-    $scope.student.saidHello = true;
-  }
-});</code></pre>
-
-  <p>
-    Let's bind the ChildController under the ParentController in our view. Doing so will allow it to reference the property contained on the parent scope.
-  </p>
-
-  <pre class="pre"><code>&lt;div ng-controller=&quot;ParentController&quot;&gt;
-  &lt;div ng-controller=&quot;ChildController&quot;&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;student.name&quot; placeholder=&quot;student name&quot;&gt;&lt;/input&gt;
-    &lt;a class=&quot;button&quot; href=&quot;&quot; ng-click=&quot;sayHello()&quot;&gt;Say hello&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;p&gt;<span ng-non-bindable="">{{ student }}</span>&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-  <h3>Here it is in action:</h3>
-
-  <div ng-controller="ParentController">
-    <div ng-controller="ChildController">
-      <input type="text" ng-model="student.name" placeholder="student name"></input>
-      <a class="button" href="" ng-click="sayHello()">Say hello</a>&nbsp;&nbsp;
-      <a class="button" href="" ng-click="reset()">Reset</a>
-    </div>
-    <p>{{ student }}</p>
-  </div> -->
 
 </body>
 

@@ -1,8 +1,11 @@
 body {
-  max-width: 80%;
-  margin: 0 auto;
   letter-spacing: .01rem;
   hyphens: none;
+}
+
+.eighty {
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
@@ -79,10 +82,12 @@ code {
 
 .left {
   float: left;
+  margin-bottom: 1em;
 }
 
 .right {
   float: right;
+  margin-bottom: 1em;
 }
 
 /* ANIMATIONS
@@ -128,3 +133,8 @@ code {
 
 /*.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }*/
 .ng-leave           { animation: rotateOutNewspaper 0.5s both ease-in; z-index: 9999; }
+
+/* page specific animations ------------------------ */
+
+/*.page-intro.ng-enter         { animation: scaleUp 0.5s both ease-in; }
+.page-intro.ng-leave         { transform-origin: 0% 0%; animation: rotateFall 1s both ease-in; }*/

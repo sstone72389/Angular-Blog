@@ -13,19 +13,19 @@ app.config(function($routeProvider) {
         // route for the getting started page
         .when('/intro', {
             templateUrl : 'pages/intro.html',
-            controller: 'mainController'
+            controller: 'introController'
         })
 
         // route for the javascript page
         .when('/javascript', {
             templateUrl : 'pages/js.html',
-            controller: 'aboutController'
+            controller: 'jsController'
         })
 
         // route for the scopes page
         .when('/scopes', {
             templateUrl : 'pages/scopes.html',
-            controller: 'contactController'
+            controller: 'scopesController'
         })
 
         .otherwise({
@@ -33,20 +33,19 @@ app.config(function($routeProvider) {
 		    });
 });
 
-// CONTROLLERS ============================================
-// home page controller
-app.controller('mainController', function($scope) {
-    $scope.pageClass = 'page-home';
+// Controllers containing pages class to be used for individual animations
+app.controller('introController', function($scope) {
+    $scope.pageClass = 'page-intro';
 });
 
-// about page controller
-app.controller('aboutController', function($scope) {
-    $scope.pageClass = 'page-about';
+// js page controller
+app.controller('jsController', function($scope) {
+    $scope.pageClass = 'page-js';
 });
 
-// contact page controller
-app.controller('contactController', function($scope) {
-    $scope.pageClass = 'page-contact';
+// scopes page controller
+app.controller('scopesController', function($scope) {
+    $scope.pageClass = 'page-scopes';
 });
 
 
