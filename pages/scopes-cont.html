@@ -1,9 +1,94 @@
 <h2>More on scopes</h2>
 
 <p>
-  A <code class="code">$scope</code> is a javascript object. In Angular, it ties a view (or a DOM element) to the controller. In the MVC structure, <code class="code">$scope</code> becomes the model. The controller and view both have access to this,
-  allowing communication between the two. The <code class="code">$scope</code> will house both the data and functions that we run in the&nbsp;view.
+  Let's play with scopes a bit more. For this next example, lets pretend we're a bank and we're loaning some money out to a previous student who wants to open up their own AngularJS school (since clearly they are experts, now that they have completed my tuitorial). We'll begin by defining some custom logic to determine the interest for our loan. Let's get&nbsp;moving!
 </p>
+
+<p>
+  Do you remember what's next? That's right! (or maybe it isn't... I can't <em>actually</em> hear you.) Let's head over to our main.js file and create a <code class="code">root controller</code> for our banking bot. You can see mine&nbsp;below:
+</p>
+
+<pre class="pre"><code>app.controller('interestController', function($scope) {
+  $scope.amt = 50000;
+  $scope.terms = 1;
+  $scope.rate= 10;
+  $scope.interestamt= function() {
+    return ($scope.amt*$scope.rate*$scope.terms)/100;
+  };
+});</code></pre>
+
+<p>
+  Okay, so once again we need to make this available to the view. We hardcoded all of our banking data, so for now, lets just show the interest amount in a&nbsp;template:
+</p>
+
+<pre class="pre"><code>&lt;div ng-controller="interestController">Interest Amount: <span ng-non-bindable="">{{ "$." + interestamt() }}</span>&lt;/div&gt;</code></pre>
+
+<div ng-controller="interestController"><p>Here it is: <strong>Interest Amount: {{ "$." + interestamt() }}</strong></p></div>
+
+<p>Cool! So that was wayyy to easy, though. Lets make this a little more user friendly. What if our customers want to know the interest for a loan with different parameters than we hard coded? The cool part is that we don't need to do any more work to our controller. We can make changes to the model right in the DOM! Let's create a table our users can interact with. Check out the code and finished product below. Play with the inputs to see the view update&nbsp;automatically.</p>
+
+<pre class="pre"><code>&lt;div ng-controller=&quot;interestController&quot;&gt;
+&lt;tr&gt;&lt;td&gt;PRINCIPAL AMOUNT: &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;number&quot; ng-model=&quot;amt&quot; &gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;RATE            : &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;number&quot; ng-model=&quot;rate&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TERMS&#x9;&#x9;: &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;number&quot; ng-model=&quot;terms&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;&lt;td&gt;Interest Amount: <span ng-non-bindable="">{{ "$." + interestamt() }}<span>&lt;/td&gt;
+&lt;tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+<div ng-controller="interestController">
+<table align="center">
+<tr><td>PRINCIPAL AMOUNT: </td><td><input type="number" ng-model="amt" ></td></tr>
+<tr><td>RATE            : </td><td><input type="number" ng-model="rate"></td></tr>
+<tr><td>TERMS		: </td><td><input type="number" ng-model="terms"></td></tr>
+<tr>
+<td></td><td>Simple Interest Amount: {{"$." + interestamt()}}</td>
+<tr>
+</table>
+</div>
+
+<p>Pretty cool, huh? The view will immeadiately show our updated interest total. This is because of that weird "data-binding" thing we mentioned earlier. Don't worry if you're still a bit fuzzy on it because that's up&nbsp;next!</p>
+
+<!-- <p>
+  Do you remember what's next? That's right! (or maybe it isn't... I can't <em>actually</em> hear you.) Lets head over to our main.js file and create a <code class="code">root controller</code> for our media player. You can see mine&nbsp;below.
+</p>
+
+<pre class="pre"><code>app.controller('SongController', ['$scope', function($scope) {
+}]);</code></pre>
+
+<p>
+  Lets add an audio element. Please note that this can be done either in the HTML or our controller. We will store it in our scope, meaning that we will link the view to our controller using the <code class="code">$scope</code>&nbsp;object.
+</p>
+
+  <pre class="pre"><code>app.controller('SongController', ['$scope', function($scope) {
+    $scope.playing = false;
+    $scope.audio = document.createElement('audio');
+    $scope.audio.src = '/media/music.mp3';
+}]);
+
+app.controller('TalksController', ['$scope', function($scope) {
+}]);</code></pre>
+
+<p>
+  There are a couple other additions, here: the state of the media player, and the source of the media. Since we are hosting this file, you can see a relative URL was&nbsp;used. Lets see if this works. We will need to add some HTML so our users can check it out:
+</p>
+
+<pre class="pre"><code>&lt;div ng-controller=&quot;SongController&quot;&gt;
+  &lt;button ng-click=&quot;play()&quot; class=&quot;button&quot; ng-show=&quot;!playing&quot;&gt;Play&lt;/button&gt;
+  &lt;button ng-click=&quot;stop()&quot; class=&quot;button alert&quot; ng-show=&quot;playing&quot;&gt;Stop&lt;/button&gt;
+  Playing audio: &lt;b&gt;<span ng-non-bindable="">{{ playing }}</span>&lt;/b&gt;
+&lt;/div&gt;</code></pre>
+
+<p>
+  Here it is:
+  <div ng-controller="SongController" class="ng-scope">
+  <button ng-click="play()" class="button" ng-show="!playing">Play</button>
+  <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
+  Playing audio: <b>{{ playing }}</b>
+</div>
+</p> -->
+
 
 <a class="left" href="#scopes">Back</a>
 

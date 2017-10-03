@@ -59,7 +59,6 @@ app.controller('scopesContController', function($scope) {
     $scope.pageClass = 'page-scopes-cont';
 });
 
-
 app.run(function($rootScope) {
   $rootScope.name = "Angular Student"
 });
@@ -82,3 +81,21 @@ app.controller('ChildController', function($scope) {
     $scope.student.saidHello = false;
   }
 });
+
+app.controller('interestController', function($scope) {
+  $scope.amt = 50000;
+  $scope.terms = 1;
+  $scope.rate= 10;
+  $scope.interestamt= function() {
+    return ($scope.amt*$scope.rate*$scope.terms)/100;
+  };
+});
+
+// app.controller('SongController', ['$scope', function($scope) {
+//   $scope.playing = false;
+//   $scope.audio = document.createElement('audio');
+//   $scope.audio.src = '/media/music.mp3';
+// }]);
+//
+// app.controller('TalksController', ['$scope', function($scope) {
+// }]);

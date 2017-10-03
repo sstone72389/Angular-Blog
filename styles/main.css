@@ -71,13 +71,22 @@ code {
 }
 
 .pre {
-  margin: 0;
   padding: 10px 30px;
   display: block;
   background: #1d1f20;
   color: #839496;
   font-size: 90%;
   line-height: 2em;
+}
+
+table {
+width: 640px;
+border-collapse: collapse;
+border-spacing: 0;
+background-color:#e91e63;
+margin-bottom: 1em;
+margin-top: 1em;
+
 }
 
 .left {
