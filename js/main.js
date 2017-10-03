@@ -28,6 +28,12 @@ app.config(function($routeProvider) {
             controller: 'scopesController'
         })
 
+        // route for the scopes-cont page
+        .when('/scopes-cont', {
+            templateUrl : 'pages/scopes-cont.html',
+            controller: 'scopesContController'
+        })
+
         .otherwise({
 			       redirectTo: '/intro'
 		    });
@@ -46,6 +52,11 @@ app.controller('jsController', function($scope) {
 // scopes page controller
 app.controller('scopesController', function($scope) {
     $scope.pageClass = 'page-scopes';
+});
+
+// scopes page controller
+app.controller('scopesContController', function($scope) {
+    $scope.pageClass = 'page-scopes-cont';
 });
 
 
