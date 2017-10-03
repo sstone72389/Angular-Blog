@@ -21,9 +21,9 @@
   Okay, so once again we need to make this available to the view. We hardcoded all of our banking data, so for now, lets just show the interest amount in a&nbsp;template:
 </p>
 
-<pre class="pre"><code>&lt;div ng-controller="interestController">Interest Amount: <span ng-non-bindable="">{{ "$." + interestamt() }}</span>&lt;/div&gt;</code></pre>
+<pre class="pre"><code>&lt;div ng-controller="interestController">Interest Amount: <span ng-non-bindable="">{{ "$" + interestamt() }}</span>&lt;/div&gt;</code></pre>
 
-<div ng-controller="interestController"><p>Here it is: <strong>Interest Amount: {{ "$." + interestamt() }}</strong></p></div>
+<div ng-controller="interestController"><p>Here it is: <strong>Interest Amount: {{ "$" + interestamt() }}</strong></p></div>
 
 <p>Cool! So that was wayyy to easy, though. Lets make this a little more user friendly. What if our customers want to know the interest for a loan with different parameters than we hard coded? The cool part is that we don't need to do any more work to our controller. We can make changes to the model right in the DOM! Let's create a table our users can interact with. Check out the code and finished product below. Play with the inputs to see the view update&nbsp;automatically.</p>
 
@@ -32,7 +32,7 @@
 &lt;tr&gt;&lt;td&gt;RATE            : &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;number&quot; ng-model=&quot;rate&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;TERMS&#x9;&#x9;: &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;number&quot; ng-model=&quot;terms&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;&lt;td&gt;Interest Amount: <span ng-non-bindable="">{{ "$." + interestamt() }}<span>&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;&lt;td&gt;Interest Amount: <span ng-non-bindable="">{{ "$" + interestamt() }}<span>&lt;/td&gt;
 &lt;tr&gt;
 &lt;/table&gt;
 &lt;/div&gt;</code></pre>
@@ -43,7 +43,7 @@
 <tr><td>RATE            : </td><td><input type="number" ng-model="rate"></td></tr>
 <tr><td>TERMS		: </td><td><input type="number" ng-model="terms"></td></tr>
 <tr>
-<td></td><td>Simple Interest Amount: {{"$." + interestamt()}}</td>
+<td></td><td>Simple Interest Amount: {{"$" + interestamt()}}</td>
 <tr>
 </table>
 </div>
