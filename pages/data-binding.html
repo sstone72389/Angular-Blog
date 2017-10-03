@@ -1,16 +1,30 @@
 <h2>Data binding</h2>
 
 <p>
-  Okay, so you should have a decent grasp on <code class="code">$scope</code> at this point. Why don't we discuss this elusive <em>binding</em> thing. Whether you knew it or not, you have been working with <code class="code">data-binding</code> throughout this tuitorial.
+  Okay, so you should have a decent grasp on <code class="code">$scope</code> at this point. Why don't we discuss this elusive <em>binding</em> thing. Whether you knew it or not, you have been working with <code class="code">data-binding</code> throughout this&nbsp;tuitorial.
 </p>
 
-<p>Lets start with a simple definition of what were about to get into. According to the Angular docs: Data-binding in AngularJS apps is the automatic synchronization of data between the model and view components. The way that AngularJS implements data-binding lets you treat the model as the single-source-of-truth in your application. The view is a projection of the model at all times. When the model changes, the view reflects the change, and vice versa.</p>
+<p>Lets start with a simple definition of what were about to get into. According to the Angular docs: Data-binding in AngularJS apps is the automatic synchronization of data between the model and view components. The way that AngularJS implements data-binding lets you treat the model as the single-source-of-truth in your application. The view is a projection of the model at all times. When the model changes, the view reflects the change, and vice&nbsp;versa.</p>
 
 <p>They even gave us a nifty diagram:</p>
 
 <img src="./img/Two_Way_Data_Binding.png" alt="data-binding">
 
-<p>Let's make our student app a bit more interesting. We will bind an input field to the <code class="code">student.name</code> attribute. This sets up a bi-directional binding from the input field to the page.</p>
+<p>Let's make our student app a bit more interesting. We will bind an input field to the <code class="code">student.name</code> attribute. This sets up a bi-directional binding from the input field to the page. It is bi-directional here because, if either the view or model see a change, it will be updated by AngularJS automatically for you. This is why our banking example worked without changing the hard coded data in our&nbsp;controller.</p>
+
+<p>To get started, well use the <code class="code">ng-model</code> function on our input, like so:</p>
+
+<pre class="pre"><code>&lt;div ng-controller=&quot;MyController&quot;&gt;
+  &lt;input type=&quot;text&quot; ng-model=&quot;person.name&quot; placeholder=&quot;Enter your name&quot; /&gt;
+  &lt;h5&gt;Hello <span ng-non-bindable="">{{ person.name }}</span>&lt;/h5&gt;
+&lt;/div&gt;</code></pre>
+
+<div ng-controller="myFirstController">
+  <input type="text" ng-model="student.name" placeholder="Enter your name" />
+  <h5>Hello {{ student.name }}</h5>
+</div>
+
+<p>Yes...that really is it. I know; seems too good to be true, but this is the magic of Angular! There are obviously more complicated examples of data-binding within Angualar, but for this tuitorials purposes we won't go any deeper. That said, it is one of the biggest reasons people like this framework. It can really speed up your process by doing some of the heavy lifting for you.</p>
 
 <a class="left" href="#scopes-cont">Back</a>
 
