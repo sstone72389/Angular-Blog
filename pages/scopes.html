@@ -54,7 +54,7 @@ $rootScope.name = "Angular Student"
 </p>
 
 <p>
-  The <code class="code">ng-controller</code> directive creates a new <code class="code">$scope</code> object for our selected DOM element and nests it in the containing <code class="code">$scope</code>. For this instance, the parent <code class="code">$scope</code>    of our div is the <code class="code">$rootScope</code> object. Basically, the rules of protypical inheritance are applied here. If AngularJS cannot find a property on a specific scope, it will climb up to the containing parent scope (all the way up
+  The <code class="code">ng-controller</code> directive creates a new <code class="code">$scope</code> object for our selected DOM element and nests it in the containing <code class="code">$scope</code>. For this instance, the parent <code class="code">$scope</code>    of our div is the <code class="code">$rootScope</code> object. Basically, the rules of prototypal inheritance are applied here. If AngularJS cannot find a property on a specific scope, it will climb up to the containing parent scope (all the way up
   to our "global" rootScope) to find it. A visualization of this "family tree" can be seen&nbsp;below.
 </p>
 
@@ -85,7 +85,7 @@ $scope.student = {
 </p>
 
 <p>
-  Lets take a deeper look at how prototypical inheritance works within an AngularJS app. Say we have a <code class="code">ParentController</code> containing the student object and a <code class="code">ChildController</code> that wants to reference such
+  Lets take a deeper look at how prototypal inheritance works within an AngularJS app. Say we have a <code class="code">ParentController</code> containing the student object and a <code class="code">ChildController</code> that wants to reference such
   object.
 </p>
 
