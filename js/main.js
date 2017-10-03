@@ -34,10 +34,18 @@ app.config(function($routeProvider) {
             controller: 'scopesContController'
         })
 
+        // route for the scopes-cont page
+        .when('/data-binding', {
+            templateUrl : 'pages/data-binding.html',
+            controller: 'bindingController'
+        })
+
         .otherwise({
 			       redirectTo: '/intro'
 		    });
 });
+
+
 
 // Controllers containing pages class to be used for individual animations
 app.controller('introController', function($scope) {
@@ -54,10 +62,17 @@ app.controller('scopesController', function($scope) {
     $scope.pageClass = 'page-scopes';
 });
 
-// scopes page controller
+// scopes cont controller
 app.controller('scopesContController', function($scope) {
     $scope.pageClass = 'page-scopes-cont';
 });
+
+// scopes cont controller
+app.controller('bindingController', function($scope) {
+    $scope.pageClass = 'page-data-binding';
+});
+
+
 
 app.run(function($rootScope) {
   $rootScope.name = "Angular Student"
