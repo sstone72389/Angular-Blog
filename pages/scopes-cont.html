@@ -48,47 +48,7 @@
 </table>
 </div>
 
-<p>Pretty cool, huh? The view will immeadiately show our updated interest total. This is because of that weird "data-binding" thing we mentioned earlier. Don't worry if you're still a bit fuzzy on it because that's up&nbsp;next!</p>
-
-<!-- <p>
-  Do you remember what's next? That's right! (or maybe it isn't... I can't <em>actually</em> hear you.) Lets head over to our main.js file and create a <code class="code">root controller</code> for our media player. You can see mine&nbsp;below.
-</p>
-
-<pre class="pre"><code>app.controller('SongController', ['$scope', function($scope) {
-}]);</code></pre>
-
-<p>
-  Lets add an audio element. Please note that this can be done either in the HTML or our controller. We will store it in our scope, meaning that we will link the view to our controller using the <code class="code">$scope</code>&nbsp;object.
-</p>
-
-  <pre class="pre"><code>app.controller('SongController', ['$scope', function($scope) {
-    $scope.playing = false;
-    $scope.audio = document.createElement('audio');
-    $scope.audio.src = '/media/music.mp3';
-}]);
-
-app.controller('TalksController', ['$scope', function($scope) {
-}]);</code></pre>
-
-<p>
-  There are a couple other additions, here: the state of the media player, and the source of the media. Since we are hosting this file, you can see a relative URL was&nbsp;used. Lets see if this works. We will need to add some HTML so our users can check it out:
-</p>
-
-<pre class="pre"><code>&lt;div ng-controller=&quot;SongController&quot;&gt;
-  &lt;button ng-click=&quot;play()&quot; class=&quot;button&quot; ng-show=&quot;!playing&quot;&gt;Play&lt;/button&gt;
-  &lt;button ng-click=&quot;stop()&quot; class=&quot;button alert&quot; ng-show=&quot;playing&quot;&gt;Stop&lt;/button&gt;
-  Playing audio: &lt;b&gt;<span ng-non-bindable="">{{ playing }}</span>&lt;/b&gt;
-&lt;/div&gt;</code></pre>
-
-<p>
-  Here it is:
-  <div ng-controller="SongController" class="ng-scope">
-  <button ng-click="play()" class="button" ng-show="!playing">Play</button>
-  <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
-  Playing audio: <b>{{ playing }}</b>
-</div>
-</p> -->
-
+<p>Pretty cool, huh? The view will immeadiately show our updated interest total. This is because of that weird "data-binding" thing we mentioned earlier. Don't worry if you're still a bit fuzzy on it, because that's up&nbsp;next!</p>
 
 <a class="left" href="#scopes">Back</a>
 

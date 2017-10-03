@@ -90,12 +90,3 @@ app.controller('interestController', function($scope) {
     return ($scope.amt*$scope.rate*$scope.terms)/100;
   };
 });
-
-// app.controller('SongController', ['$scope', function($scope) {
-//   $scope.playing = false;
-//   $scope.audio = document.createElement('audio');
-//   $scope.audio.src = '/media/music.mp3';
-// }]);
-//
-// app.controller('TalksController', ['$scope', function($scope) {
-// }]);
