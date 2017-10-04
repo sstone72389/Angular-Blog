@@ -105,3 +105,9 @@ app.controller('interestController', function($scope) {
     return ($scope.amt*$scope.rate*$scope.terms)/100;
   };
 });
+
+app.controller('MathController', function($scope) {
+  $scope.counter = 0;
+  $scope.add = function(amount) { $scope.counter += amount; };
+  $scope.subtract = function(amount) { $scope.counter -= amount; };
+});
