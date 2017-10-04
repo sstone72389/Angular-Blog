@@ -1,0 +1,112 @@
+<h2>Routing</h2>
+
+<p>
+  I bet you've been admiring the nifty navigation in this tuitorial, right?! Okay, don't answer that. But still; you should have been! I digress... A very important feature of Angular (or any useful framework nowadays) is <code class="code">routing</code>.
+  "Injecting" pages into your single page application (SPA) is an essential building block to any AngularJS app. Let's check out how it works...
+</p>
+
+<p>
+  First on the to-do list is to make sure you have included the correct js files.<code class="code">angular-route.js</code> must also be linked in the head of your <code class="code">index.html</code> page:
+</p>
+
+<pre class="pre"><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>
+  Okay, so you may have noticed this, but I injected pages for each section you learned. The cool thing about Angular is that you don't have to inject an <em>entire</em> page, you can essentially manipulate the <code class="code">views</code> any way
+  you want. It all starts with the <code class="code">ng-view</code> directive. This is where we want our views to populate. Check out my code snippet below.
+</p>
+
+<pre class="pre"><code>&lt;div ng-view&gt;&lt;/div&gt;</code></pre>
+
+<p>
+  Yep! That's it! That's all you need to get started.
+</p>
+
+<p>
+  Okay, I guess that's not it. You still need to configure routes and views. Remember that empty array in our <code class="code">angular.module</code> that I said we'd get back to? That's right. We're going to need to add to that.
+</p>
+
+<pre class="pre"><code>var app = angular.module('myApp', ['ngRoute']);</code></pre>
+
+<p>
+  According to the docs, The <code class="code">ngRoute</code> module provides routing and deeplinking services and directives for AngularJS apps. The next step is to configure routes using <code class="code">$routeProvider</code>. As you can see by the
+  configuration below, you can specify the route, the template file to use, and even a controller for each view.
+</p>
+
+<pre class="pre"><code>// script.js
+
+        // include ngRoute module
+    var app = angular.module('myApp', ['ngRoute']);
+
+    // configure our routes
+    app.config(function($routeProvider) {
+        $routeProvider
+
+            // route for home page
+            .when('/', {
+                templateUrl : 'pages/home.html',
+                controller  : 'mainController'
+            })
+
+            // route for about page
+            .when('/about', {
+                templateUrl : 'pages/about.html',
+                controller  : 'aboutController'
+            })
+
+            // route for help page
+            .when('/help', {
+                templateUrl : 'pages/help.html',
+                controller  : 'helpController'
+            });
+    });
+
+    // create the controller and inject Angular's $scope
+    app.controller('mainController', function($scope) {
+        // create a message to display in our view
+        $scope.message = 'I am a home page';
+    });
+
+    app.controller('aboutController', function($scope) {
+        $scope.message = 'I am an about page.';
+    });
+
+    app.controller('helpController', function($scope) {
+        $scope.message = 'HELPPPP ANGULAR IS BLOWING MY MIND!';
+    });</code></pre>
+
+<p>
+  As you likely noticed, our route configurations contains a templateURL. This points to the page to be injected. An example of our <code class="code">home.html</code> page can be seen below. We would need one of these for each of our respective pages
+  configured in our routing.
+</p>
+
+<pre class="pre"><code>&lt;!-- home.html --&gt;
+
+&lt;h1&gt;Home Page&lt;/h1&gt;
+
+&lt;p&gt;<span ng-non-bindable="">{{ message }}</span>&lt;/p&gt;</code></pre>
+
+<p>
+  <strong>NOTE:</strong> When working localy, it is important to make sure you are using <code class="code">http://localhost</code> or some sort of test enviornment. It is not reccomended to use the file patch located on your computer, as Angular will likely give you
+  a " Cross origin requests are only supported for HTTP."
+</p>
+
+<p>
+  Okay, a couple of final thoughts before we move on. Angular throws a hash into your URLs. These can be removed if it pleases you, using <code class="code">$locationProvider</code>. We won't get into it, now, but feel free to do some digging on your own if you'd like.
+</p>
+
+<p>
+  Linking to your views within the app: This is fairly easy, as we have done most of the hard work, already. Using a regular old anchor tag, we can link to our <code class="code">home.html</code> page as such (this should match the configuration in your js file):
+</p>
+
+<pre class="pre"><code>&lt;a href=&quot;home&quot;&gt;Home&lt;/a&gt;</code></pre>
+
+<p>
+  Moving on...
+</p>
+
+
+<a class="left" href="#data-binding">Back</a>
+
+<a class="right" href="#">Continue</a>

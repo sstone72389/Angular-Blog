@@ -5,10 +5,9 @@ app.config(function($routeProvider) {
     $routeProvider
 
         // route for the home page
-        // .when('/', {
-        //     templateUrl : 'pages/home.html',
-        //     controller  : 'mainController'
-        // })
+        .when('/', {
+            templateUrl : 'pages/intro.html'
+        })
 
         // route for the getting started page
         .when('/intro', {
@@ -40,6 +39,11 @@ app.config(function($routeProvider) {
             controller: 'bindingController'
         })
 
+        .when('/routing', {
+            templateUrl : 'pages/routing.html',
+            controller: 'routingController'
+        })
+
         .otherwise({
 			       redirectTo: '/intro'
 		    });
@@ -67,9 +71,14 @@ app.controller('scopesContController', function($scope) {
     $scope.pageClass = 'page-scopes-cont';
 });
 
-// scopes cont controller
+// binding controller
 app.controller('bindingController', function($scope) {
     $scope.pageClass = 'page-data-binding';
+});
+
+// routing controller
+app.controller('routingController', function($scope) {
+    $scope.pageClass = 'page-routing';
 });
 
 
