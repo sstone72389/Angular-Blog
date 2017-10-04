@@ -154,7 +154,7 @@ margin-top: 1em;
 }
 
 /*.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }*/
-.ng-leave           { animation: rotateOutNewspaper 0.5s both ease-in; z-index: 9999; }
+/*.ng-leave           { animation: rotateFall 0.5s both ease-in; z-index: 9999; }*/
 
 /* page specific animations ------------------------ */
 
