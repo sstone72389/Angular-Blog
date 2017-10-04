@@ -44,6 +44,10 @@ app.config(function($routeProvider) {
             controller: 'routingController'
         })
 
+        .when('/validation', {
+            templateUrl : 'pages/validation.html'
+        })
+
         .otherwise({
 			       redirectTo: '/intro'
 		    });
