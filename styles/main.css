@@ -23,6 +23,19 @@ p, a {
   line-height: 1.6em;
 }
 
+.center {
+	text-align:center;
+}
+.center .nav {
+	float:none;
+}
+.center .nav li {
+	display:inline-block;
+	float:none;
+	margin:0 10px;
+	vertical-align:middle;
+}
+
 header {
   line-height: .6em;
   text-align: center;
