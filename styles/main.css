@@ -24,16 +24,18 @@ p, a {
 }
 
 .center {
-	text-align:center;
+  text-align: center;
 }
+
 .center .nav {
-	float:none;
+  float: none;
 }
+
 .center .nav li {
-	display:inline-block;
-	float:none;
-	margin:0 10px;
-	vertical-align:middle;
+  display: inline-block;
+  float: none;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 
 header {
@@ -47,13 +49,13 @@ header {
 }
 
 input[type=text] {
-    border: 2px solid red;
-    border-radius: 3px;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-size: 16px;
+  border: 2px solid red;
+  border-radius: 3px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .yourName {
@@ -73,7 +75,7 @@ ul {
 }
 
 code {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .code {
@@ -92,14 +94,12 @@ code {
   line-height: 2em;
 }
 
-table {
-width: 640px;
-border-collapse: collapse;
-border-spacing: 0;
-background-color:#e91e63;
-margin-bottom: 1em;
-margin-top: 1em;
-
+.interest-table {
+  width: 640px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .left {
@@ -112,48 +112,112 @@ margin-top: 1em;
   margin-bottom: 1em;
 }
 
+.css-form input.ng-invalid.ng-touched {
+  background-color: lightgray;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: lightgray;
+}
+
+input[type=email] {
+  border: 2px solid red;
+  border-radius: 3px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+td {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.form-center {
+  border: 2px solid;
+  padding: 10px;
+}
+
 /* ANIMATIONS
 ============================================================================= */
 
 /* leaving animations ----------------------------------------- */
+
 /* rotate and fall */
+
 @keyframes rotateFall {
-    0%      { transform: rotateZ(0deg); }
-    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
-    40%     { transform: rotateZ(17deg); }
-    60%     { transform: rotateZ(16deg); }
-    100%    { transform: translateY(100%) rotateZ(17deg); }
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: rotateZ(17deg);
+  }
+  60% {
+    transform: rotateZ(16deg);
+  }
+  100% {
+    transform: translateY(100%) rotateZ(17deg);
+  }
 }
 
 /* slide in from the bottom */
+
 @keyframes slideOutLeft {
-    to      { transform: translateX(-100%); }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* rotate out newspaper */
+
 @keyframes rotateOutNewspaper {
-    to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+  to {
+    transform: translateZ(-3000px) rotateZ(360deg);
+    opacity: 0;
+  }
 }
 
 /* entering animations --------------------------------------- */
+
 /* scale up */
+
 @keyframes scaleUp {
-    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+  from {
+    opacity: 0.3;
+    -webkit-transform: scale(0.8);
+  }
 }
 
 /* slide in from the right */
+
 @keyframes slideInRight {
-    from    { transform:translateX(100%); }
-    to      { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* slide in from the bottom */
+
 @keyframes slideInUp {
-    from    { transform:translateY(100%); }
-    to      { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /*.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }*/
+
 /*.ng-leave           { animation: rotateFall 0.5s both ease-in; z-index: 9999; }*/
 
 /* page specific animations ------------------------ */

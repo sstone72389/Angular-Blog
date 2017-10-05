@@ -124,3 +124,13 @@ app.controller('MathController', function($scope) {
   $scope.add = function(amount) { $scope.counter += amount; };
   $scope.subtract = function(amount) { $scope.counter -= amount; };
 });
+
+app.controller('FormController', function($scope) {
+    $scope.master = {};
+    $scope.save= function(employee) {
+        $scope.master = angular.copy(employee);
+    };
+    $scope.reset = function() {
+        $scope.employee = angular.copy($scope.master);
+    };
+});

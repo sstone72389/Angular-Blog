@@ -1,8 +1,92 @@
 <h2>Form Validation</h2>
 
-<nav aria-label="footer-nav">
-  <ul class="pager">
-    <li><a href="#routing">Previous</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</nav>
+<p>
+  Alright; lets have some fun with form validation, eh? Angular makes this proccess very easy as compared to traditional vanilla javascript or jquery. Angular even allows you to provide customized and formatted error messages.
+</p>
+
+<p>
+  AngularJS provides client-side form validation. For this type of validation, input errors are detected on the client upon submission of the form to the server. If any of the form control are found to be in invalid state, the submission of the form will
+  be canceled and the appropriate error message will be displayed to the user.
+</p>
+
+<p>
+  Here are some of the input states available to Angular and their definitions:
+</p>
+
+<ul>
+  <li><code class="code">$pristine</code>: True if user has not interacted with the form yet means No fields or controls of the form has been modified yet.</li>
+  <li><code class="code">$dirty</code>: True if user has already interacted with the form that is One or more controls of the form has been modified.</li>
+  <li><code class="code">$invalid</code>: True if at least one control of the form is invalid</li>
+  <li><code class="code">$valid</code>: True if all of the fields or controls of the forms are valid.</li>
+  <li><code class="code">$submitted</code>: True if user has submitted the form even if its invalid.</li>
+</ul>
+
+<p>
+  Here are some of the great form validation included with Angular:
+</p>
+
+<p>
+  Required: AngularJS provides an <code class="code">ng-required</code> directive to ensure users complete required fields.
+</p>
+
+<pre class="pre"><code>&lt;input type="text" ng-required="true"/&gt;</code></pre>
+
+<p>
+  Minimum length <code class="code">ng-minlength</code>:
+</p>
+
+<pre class="pre"><code>&lt;input type="text" ng-minlength=1/&gt;</code></pre>
+
+<p>
+  Maximum length <code class="code">ng-maxlength</code>:
+</p>
+
+<pre class="pre"><code>&lt;input type="text" ng-maxlength=10/&gt;</code></pre>
+
+<p>
+  Setting the input type to email will ensure a vaild email adress is entered:
+</p>
+
+<pre class="pre"><code>&lt;input type="email" name="email" ng-model="student.email"/&gt;</code></pre>
+
+<p>
+  Want to see some of these in action? Check out the form below!
+</p>
+
+
+<div ng-controller="FormController">
+  <form name="form" novalidate class="css-form">
+    <div class="form-center">
+      <table width="100%">
+        <tr>
+          <td>AngularJS form validation</td>
+        </tr>
+        <tr>
+          <td><input type="text" ng-model="student.name" name="studName" ng-required="true" placeholder="Enter your name" /></td>
+        </tr>
+        <div ng-show="form.$submitted || form.studName.$touched">
+          <span style="color:red" ng-show="form.studName.$error.required">Please enter your name</span>
+        </div>
+
+        <tr>
+          <td><input type="email" name="studEmail" ng-model="student.email" ng-required="true" placeholder="Enter your email" /></td>
+        </tr>
+        <div ng-show="form.$submitted || form.studEmail.$touched">
+          <span style="color:red" ng-show="form.studEmail.$error.required">Please provide an email address</span>
+          <span style="color:red" ng-show="form.studEmail.$error.email">Please enter a vaild email</span>
+        </div>
+        <tr>
+        </tr>
+      </table>
+  </form>
+  <input type="submit" class="btn btn-default " ng-disabled="form.$invalid" ng-click="save(student)" value="Submit" /></td>
+  <p class="a1">Before Submit = {{student | json}}</p>
+  <p class="a1">Submitted = {{master | json}}</p>
+  </div>
+
+  <nav aria-label="footer-nav">
+    <ul class="pager">
+      <li><a href="#routing">Previous</a></li>
+      <li><a href="#">Next</a></li>
+    </ul>
+  </nav>
