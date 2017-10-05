@@ -15,7 +15,7 @@
 </p>
 
 <pre class="pre"><code>app.run(function($rootScope) {
-$rootScope.name = "Angular Student"
+  $rootScope.name = "Angular Student"
 });</code></pre>
 
 <p>
@@ -70,9 +70,9 @@ $rootScope.name = "Angular Student"
 </p>
 
 <pre class="pre"><code>app.controller('myFirstController', function($scope){
-$scope.student = {
-  name: "Bojack Horseman"
-};
+  $scope.student = {
+    name: "Bojack Horseman"
+  };
 });</code></pre>
 
 <div ng-controller="myFirstController">
@@ -94,9 +94,9 @@ $scope.student = {
 });
 
 app.controller('ChildController', function($scope) {
-$scope.sayHello = function() {
-  $scope.student.saidHello = true;
-}
+  $scope.sayHello = function() {
+    $scope.student.saidHello = true;
+  }
 });</code></pre>
 
 <p>

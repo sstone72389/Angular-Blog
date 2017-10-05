@@ -29,8 +29,18 @@
 </p>
 
 <p>
-  Functions can also be called on the <code class="code">$scope</code>. To do this, we would use the <code class="code">ng-click</code> directive to bind a click event to a method. Why don't we make a simple counter to illustrate this:
+  Functions can also be called on the <code class="code">$scope</code>. To do this, we would use the <code class="code">ng-click</code> directive to bind a click event to a method. Why don't we make a simple counter to illustrate this.
 </p>
+
+<p><strong>Javascript:</strong></p>
+
+<pre class="pre"><code>app.controller('MathController', function($scope) {
+  $scope.counter = 0;
+  $scope.add = function(amount) { $scope.counter += amount; };
+  $scope.subtract = function(amount) { $scope.counter -= amount; };
+});</code></pre>
+
+<p><strong>HTML:</strong></p>
 
 <pre class="pre"><code>&lt;div ng-controller=&quot;MathController&quot;&gt;
   &lt;h4&gt;Yay Math!!&lt;/h4&gt;
@@ -39,7 +49,7 @@
   &lt;h4&gt;Count: <span ng-non-bindable="">{{ counter }}<span>&lt;/h4&gt;
 &lt;/div&gt;</code></pre>
 
-<p> here it is: </p>
+<p><strong>Here it is:</strong></p>
 
 <div ng-controller="MathController">
   <h4>Yay Math!!</h4>
