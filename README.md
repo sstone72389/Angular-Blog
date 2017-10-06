@@ -20,7 +20,7 @@ Welcome to In Depth Angular. In this tutorial we will review the basics of worki
 
 Although this tutorial uses a CDN, Node.js and npm are essential to Angular Development. It is strongly recommended to understand these services prior to building any production applications with AngularJS.
 
-NOTE: When working locally, it is important to make sure you are using <code `>http://localhost` or some sort of test environment. It is not recommended to use the file path located on your computer, as Angular will likely give you
+NOTE: When working locally, it is important to make sure you are using `http://localhost` or some sort of test environment. It is not recommended to use the file path located on your computer, as Angular will likely give you
 a " Cross origin requests are only supported for HTTP."
 
 Enjoy the tutorial and happy coding! </>
