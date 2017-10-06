@@ -22,4 +22,12 @@ Although this tutorial uses a CDN, Node.js and npm are essential to Angular Deve
 
 NOTE: When working locally, it is important to make sure you are using `http://localhost` or some sort of test environment. It is not recommended to use the file path located on your computer, as Angular will likely give you a "Cross origin requests are only supported for HTTP."
 
+Covered Material:
+
+* Scopes
+* Javascript/Angular basics
+* Data-binding
+* Routing
+* Form validation
+
 Enjoy the tutorial and happy coding! </>
