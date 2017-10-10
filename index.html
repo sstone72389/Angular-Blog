@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller = "navController">
 <!-- Use ng-app directive to auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page - e.g. on the <body> or <html> tags. -->
 
 <head>
@@ -26,13 +26,13 @@
       <div class="navbar-header">
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#javascript">Javascript</a></li>
-        <li><a href="#scopes">Scopes</a></li>
-        <li><a href="#scopes-cont">Scopes-Cont</a></li>
-        <li><a href="#data-binding">Data-binding</a></li>
-        <li><a href="#routing">Routing</a></li>
-        <li><a href="#validation">Validation</a></li>
+        <li ng-class="{active: $route.current.activetab == 'intro'}"><a href="#intro">Intro</a></li>
+        <li ng-class="{active: $route.current.activetab == 'javascript'}"><a href="#javascript">Javascript</a></li>
+        <li ng-class="{active: $route.current.activetab == 'scopes'}"><a href="#scopes">Scopes</a></li>
+        <li ng-class="{active: $route.current.activetab == 'scopes-cont'}"><a href="#scopes-cont">Scopes-Cont</a></li>
+        <li ng-class="{active: $route.current.activetab == 'data-binding'}"><a href="#data-binding">Data-binding</a></li>
+        <li ng-class="{active: $route.current.activetab == 'routing'}"><a href="#routing">Routing</a></li>
+        <li ng-class="{active: $route.current.activetab == 'validation'}"><a href="#validation">Validation</a></li>
       </ul>
     </div>
   </nav>

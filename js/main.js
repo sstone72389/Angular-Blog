@@ -12,45 +12,58 @@ app.config(function($routeProvider) {
         // route for the getting started page
         .when('/intro', {
             templateUrl : 'pages/intro.html',
-            controller: 'introController'
+            controller: 'introController',
+            activetab: 'intro'
         })
 
         // route for the javascript page
         .when('/javascript', {
             templateUrl : 'pages/js.html',
-            controller: 'jsController'
+            controller: 'jsController',
+            activetab: 'javascript'
         })
 
         // route for the scopes page
         .when('/scopes', {
             templateUrl : 'pages/scopes.html',
-            controller: 'scopesController'
+            controller: 'scopesController',
+            activetab: 'scopes'
         })
 
         // route for the scopes-cont page
         .when('/scopes-cont', {
             templateUrl : 'pages/scopes-cont.html',
-            controller: 'scopesContController'
+            controller: 'scopesContController',
+            activetab: 'scopes-cont'
         })
 
-        // route for the scopes-cont page
+        // route for the data-binding page
         .when('/data-binding', {
             templateUrl : 'pages/data-binding.html',
-            controller: 'bindingController'
+            controller: 'bindingController',
+            activetab: 'data-binding'
         })
 
         .when('/routing', {
             templateUrl : 'pages/routing.html',
-            controller: 'routingController'
+            controller: 'routingController',
+            activetab: 'routing'
         })
 
         .when('/validation', {
-            templateUrl : 'pages/validation.html'
+            templateUrl : 'pages/validation.html',
+            activetab: 'validation'
         })
 
         .otherwise({
 			       redirectTo: '/intro'
 		    });
+});
+
+
+// Exposing route to the controller
+app.controller('navController', function ($scope, $route) {
+    $scope.$route = $route;
 });
 
 
